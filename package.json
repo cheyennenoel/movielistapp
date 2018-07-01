@@ -1,11 +1,39 @@
 {
   "name": "movielistapp",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run-script compile & npm run-script bundle & npm run-script server",
+    "compile": "babel . --out-dir compiled --presets=env,react --ignore=node_modules,compiled --source-maps inline --watch",
+    "server": "node_modules/.bin/webpack-dev-server --inline",
+    "bundle": "webpack --watch"
   },
-  "author": "cheyenne",
-  "license": "ISC"
+  "author": "Cheyenne",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheyennenoel/movielistapp.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/cheyennenoel/movielistapp/issues"
+  },
+  "homepage": "https://github.com/cheyennenoel/movielistapp/README.md",
+  "description": "",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react-app": "^3.1.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11"
+  }
 }
